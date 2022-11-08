@@ -1,0 +1,75 @@
+VM installation guide - https://www.youtube.com/watch?v=x5MhydijWmc
+ 
+
+Hyperleder Fabric Prerequisites Setup:
+
+Curl Installation
+NodeJs Installation
+Git Installation
+Python Installation
+Libtool
+Docker CE
+Docker Compose
+
+
+Run below command to install Curl.
+sudo apt-get install curl
+Verify the installation and check the version of Curl using below command.
+curl --version
+
+NodeJs Installation
+Open the terminal window and run below command to download and execute the nodejs file.
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash –
+Then run below command.
+sudo apt-get update
+Run below command to start the installation for NodeJs.
+sudo apt-get install nodejs
+Run below command to check if Nodejs is successfully installed or not. This should return the version
+of NodeJs.
+node --version
+
+Git Installation
+Open the terminal window and run below command. This will start the installation for Git.
+sudo apt-get install git
+Run below command to check if Git is successfully installed or not. This should return the version of Git.
+git --version
+
+Python Installation
+In the terminal window, run below command to install Python.
+sudo apt-get install python
+Verify the installation by running below command and that should return the version of Python.
+python --version
+
+Lib Tools Installation
+Install Lib tools using below command.
+sudo apt-get install libltdl-dev
+
+Install Docker CE (Community Edition )
+First download and then install it using below commands.
+wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_18.06.3~ce~3-0~ubuntu_amd64.deb
+sudo dpkg -i docker-ce_18.06.3~ce~3-0~ubuntu_amd64.deb
+Check the version of docker using below command and this should return the version of docker.
+docker --version
+
+Install Docker Compose
+Run below commands to setup Docker compose.
+sudo apt-get install python-pip
+pip --version
+sudo pip install docker-compose
+Verify the installation and check the version from below command.
+docker-compose version
+
+
+
+
+
+
+Hyperledger Installation
+Step 1: Run below command to download and setup Fabric.
+curl -sSL https://bit.ly/2ysbOFE | bash -s
+
+
+You may encounter below issue when you run above command.
+failed to get default registry endpoint from daemon (Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock:
+To fix this you need run below command.
+sudo chmod 666 /var/run/docker.sock

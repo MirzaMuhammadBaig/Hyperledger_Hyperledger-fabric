@@ -1,0 +1,28 @@
+Step 1: Go to fabric-samples folder by using below command.
+cd fabric-samples
+
+Step 2: Go to test-network folder by using below command.
+cd test-network
+
+Step 3: Run below command to start your test-network
+sudo ./network.sh up
+This start the network, you can run below command to check docker containers.
+sudo docker ps
+This shows you three docker containers
+One for Org1 peer node
+One for Org2 peer node
+One for Orderer
+
+When you start the network, you will also not get any channel by default. You can check the channel by using below command.
+sudo docker exec peer0.org1.example.com peer channel list
+This command shows you that, you don't have any channel created.
+
+Step 4: Create new channel by using below command.
+sudo ./network.sh createChannel -c testchannel
+This will create a new channel with the name testchannel.
+To verify this channel creation, run below command on both the peers.
+sudo docker exec peer0.org1.example.com peer channel list
+sudo docker exec peer0.org2.example.com peer channel list
+ 
+Step 5: To stop the network, you need to run below command.
+sudo ./network.sh down

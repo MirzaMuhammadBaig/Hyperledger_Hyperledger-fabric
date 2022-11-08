@@ -1,0 +1,14 @@
+Step 1: Go to fabric-samples folder by using below command.
+cd fabric-samples
+
+Step 2: Go to test-network folder by using below command.
+cd test-network
+
+Step 3: Run below command to start your test-network and create CA container for each organization ( one for orderer, one for org1 peer and one for org2 peer)
+sudo ./network.sh up -ca
+
+Step 4: Create new channel by using below command.
+sudo ./network.sh createChannel -c testchannel2
+This will create a new channel with the name testchannel2.
+Step 5: To stop the network, you need to run below command.
+sudo ./network.sh down

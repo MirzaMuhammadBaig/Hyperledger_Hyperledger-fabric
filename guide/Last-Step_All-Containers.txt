@@ -1,0 +1,14 @@
+Step 1: Go to fabric-samples folder by using below command.
+cd fabric-samples
+
+Step 2: Go to test-network folder by using below command.
+cd test-network
+
+Step 3: Run below command to start your test-network with all the containers (2 peers, orderer, 3 ca, 2 couchdb).
+sudo ./network.sh up -ca -s couchdb
+ 
+Step 4: Create new channel by using below command.
+sudo ./network.sh createChannel -c testchannel3
+This will create a new channel with the name testchannel3.
+Step 5: To stop the network, you need to run below command.
+sudo ./network.sh down
